@@ -1,0 +1,17 @@
+[
+    {
+        "password": "123",
+        "role": "Participant",
+        "name": "reza",
+        "id": "b6a995ec-d6ad-4519-ade0-c9f5c0aedf12",
+        "email": "reza@gmail.com"
+    },
+    {
+        "password": "123",
+        "role": "Speaker",
+        "name": "fulan",
+        "id": "6ae67a6c-153e-4d9d-bd69-338f45c185eb",
+        "expertise": "Web Dev",
+        "email": "fulan@gmail.com"
+    }
+]

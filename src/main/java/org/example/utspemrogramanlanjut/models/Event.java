@@ -18,8 +18,8 @@ public class Event {
     private ArrayList<String> participants = new ArrayList<String>();
     private ArrayList<String> speakers = new ArrayList<String>();
 
-    public Event(String name, String description, String location, String date, String startTime, String endTime) {
-        this.id = UUID.randomUUID().toString();
+    public Event(String id, String name, String description, String location, String date, String startTime, String endTime) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.location = location;

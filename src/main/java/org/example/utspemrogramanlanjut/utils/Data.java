@@ -9,9 +9,51 @@ import org.json.JSONObject;
 
 import java.io.FileWriter;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 
 public class Data {
-    private String jsonPath = "src/main/resources/org/example/utspemrogramanlanjut/json/";
+    private final String jsonPath = "src/main/resources/org/example/utspemrogramanlanjut/json/";
+
+    public ArrayList<Event> getEventList(){
+        ArrayList<Event> resultEventList = new ArrayList<Event>();
+        try{
+            String eventContent = new String(Files.readAllBytes(Paths.get(jsonPath + "Events.json")));
+            if(eventContent.isEmpty()){
+                return null;
+            }
+            JSONArray eventList = new JSONArray(eventContent);
+
+            for(int i = 0; i < eventList.length(); i++){
+                JSONObject eventObject = eventList.getJSONObject(i);
+                Event event = new Event(eventObject.getString("id"),
+                        eventObject.getString("name"),
+                        eventObject.getString("description"),
+                        eventObject.getString("location"),
+                        eventObject.getString("date"),
+                        eventObject.getString("startTime"),
+                        eventObject.getString("endTime")
+                );
+                // Add all participants
+                JSONArray participants = eventObject.getJSONArray("participants");
+                for(int j = 0; j < participants.length(); j++){
+                    String participant = participants.getString(j);
+                    participants.put(this.searchParticipantById(participant));
+                }
+                // Add all speakers
+                JSONArray speakers = eventObject.getJSONArray("speakers");
+                for(int j = 0; j < speakers.length(); j++){
+                    String speaker = speakers.getString(j);
+                    speakers.put(this.searchSpeakerById(speaker));
+                }
+                resultEventList.add(event);
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return resultEventList;
+    }
 
     public void addEventsData(Event event){
         JSONArray jsonArray;
@@ -28,22 +70,21 @@ public class Data {
             // Add all participants
             JSONArray participants = new JSONArray();
             for(Participant p : event.getParticipants()){
-                JSONObject participant = p.toJSON();
+                String participant = p.getId();
                 participants.put(participant);
             }
 
             // Add all speakers
             JSONArray speakers = new JSONArray();
             for(Speaker s : event.getSpeakers()){
-                JSONObject speaker = s.toJSON();
+                String speaker = s.getId();
                 speakers.put(speaker);
             }
 
-            InputStream inputStream = getClass().getClassLoader().getResourceAsStream("json/Events.json");
-            if(inputStream == null){
+            String eventContent = new String(Files.readAllBytes(Paths.get(jsonPath + "Events.json")));
+            if(eventContent.isEmpty()){
                 jsonArray = new JSONArray();
             }else{
-                String eventContent = new String(inputStream.readAllBytes());
                 jsonArray = new JSONArray(eventContent);
             }
             jsonArray.put(json);
@@ -66,18 +107,18 @@ public class Data {
         }
 
             // Get all person from file
-            InputStream inputStream = getClass().getClassLoader().getResourceAsStream("json/Persons.json");
+            String personContent = new String(Files.readAllBytes(Paths.get(this.jsonPath + "Persons.json")));
             // If file Persons.json doesn't exist then create empty jsonArray
-            if(inputStream == null){
+            if(personContent.isEmpty()){
                 jsonArray = new JSONArray();
             }else{
-                String personContent = new String(inputStream.readAllBytes());
                 jsonArray = new JSONArray(personContent);
             }
             // Add new person to file
             jsonArray.put(json);
             FileWriter fileWriter = new FileWriter(this.jsonPath + "Persons.json");
             fileWriter.write(jsonArray.toString(4));
+            fileWriter.close();
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -85,11 +126,11 @@ public class Data {
 
     public Participant searchParticipantById(String id){
         try{
-            InputStream inputStream = getClass().getClassLoader().getResourceAsStream("json/Persons.json");
-            if(inputStream == null){
+//            InputStream inputStream = getClass().getClassLoader().getResourceAsStream("json/Persons.json");
+            String personContent = new String(Files.readAllBytes(Paths.get(this.jsonPath + "Persons.json")));
+            if(personContent.isEmpty()){
                 return null;
             }
-            String personContent = new String(inputStream.readAllBytes());
             JSONArray personLists = new JSONArray(personContent);
 
             for(int i = 0; i < personLists.length(); i++){
@@ -112,11 +153,10 @@ public class Data {
 
     public Speaker searchSpeakerById(String id){
         try{
-            InputStream inputStream = getClass().getClassLoader().getResourceAsStream("json/Persons.json");
-            if(inputStream == null){
+            String personContent = new String(Files.readAllBytes(Paths.get(this.jsonPath + "Persons.json")));
+            if(personContent.isEmpty()){
                 return null;
             }
-            String personContent = new String(inputStream.readAllBytes());
             JSONArray personLists = new JSONArray(personContent);
 
             for(int i = 0; i < personLists.length(); i++){
@@ -140,12 +180,12 @@ public class Data {
 
     public Person searchPersonByEmail(String email){
         try{
-            InputStream inputStream = getClass().getClassLoader().getResourceAsStream("json/Persons.json");
+//            InputStream inputStream = getClass().getClassLoader().getResourceAsStream("json/Persons.json");
+            String personContent = new String(Files.readAllBytes(Paths.get(this.jsonPath + "Persons.json")));
             // If file Persons.json doesn't exist then return null
-            if(inputStream == null){
+            if(personContent.isEmpty()){
                 return null;
             }
-            String personContent = new String(inputStream.readAllBytes());
             JSONArray personLists = new JSONArray(personContent);
 
             // Search person by email

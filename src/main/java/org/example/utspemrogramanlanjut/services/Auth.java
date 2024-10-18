@@ -16,12 +16,13 @@ public class Auth {
         if(existingPerson != null){
             return false;
         }
-
         // If this person is participant
-        if(role.trim().equals("participant")){
+        if(role.trim().equalsIgnoreCase("participant")){
             Participant participant = new Participant(name, email, password);
+            data.addPersonsData(participant);
         }else{
             Speaker speaker = new Speaker(name, email, password, expertise);
+            data.addPersonsData(speaker);
         }
 
         return true;
@@ -33,17 +34,19 @@ public class Auth {
         if(existingPerson == null){
             return false;
         }
-
         // Check password
         if(!existingPerson.validatePassword(password)){
             return false;
         }
-
         this.loggedInUser = existingPerson;
         return true;
     }
 
     public void logout(){
         this.loggedInUser = null;
+    }
+
+    public Person getLoggedInUser(){
+        return this.loggedInUser;
     }
 }

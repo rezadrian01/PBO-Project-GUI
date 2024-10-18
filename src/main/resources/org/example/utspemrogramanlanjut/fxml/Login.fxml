@@ -17,8 +17,8 @@
       </Label>
       <Label layoutX="354.0" layoutY="387.0" text="Email" />
       <Label layoutX="353.0" layoutY="419.0" text="Password" />
-      <TextField fx:id="email" layoutX="427.0" layoutY="374.0" prefHeight="26.0" prefWidth="240.0" />
-      <PasswordField fx:id="password" layoutX="427.0" layoutY="406.0" prefHeight="26.0" prefWidth="240.0" />
+      <TextField fx:id="email" layoutX="427.0" layoutY="383.0" prefHeight="26.0" prefWidth="240.0" />
+      <PasswordField fx:id="password" layoutX="427.0" layoutY="415.0" prefHeight="26.0" prefWidth="240.0" />
       <Label alignment="CENTER" layoutX="11.0" layoutY="165.0" prefHeight="36.0" prefWidth="1002.0" text="Login">
          <font>
             <Font size="25.0" />
@@ -27,5 +27,10 @@
       <Button layoutX="357.0" layoutY="505.0" mnemonicParsing="false" onAction="#loginSubmit" prefHeight="30.0" prefWidth="318.0" style="-fx-background-color: #0ea5e9; -fx-text-fill: white;" text="Login" />
       <Separator layoutX="13.0" layoutY="256.0" prefHeight="0.0" prefWidth="1000.0" />
       <Separator layoutX="10.0" layoutY="141.0" prefHeight="0.0" prefWidth="1000.0" />
+      <Label fx:id="errorMessage" alignment="CENTER" layoutX="8.0" layoutY="462.0" prefHeight="21.0" prefWidth="1008.0" style="-fx-text-fill: red;">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

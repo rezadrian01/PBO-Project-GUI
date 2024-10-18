@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
@@ -17,10 +18,10 @@
       </Label>
       <Label layoutX="344.0" layoutY="377.0" text="Email" />
       <Label layoutX="343.0" layoutY="409.0" text="Password" />
-      <TextField fx:id="name" layoutX="417.0" layoutY="331.0" prefHeight="26.0" prefWidth="240.0" />
-      <TextField fx:id="email" layoutX="417.0" layoutY="364.0" prefHeight="26.0" prefWidth="240.0" />
+      <TextField fx:id="nameField" layoutX="417.0" layoutY="340.0" prefHeight="26.0" prefWidth="240.0" />
+      <TextField fx:id="emailField" layoutX="417.0" layoutY="373.0" prefHeight="26.0" prefWidth="240.0" />
       <Label layoutX="343.0" layoutY="344.0" text="Name" />
-      <PasswordField fx:id="password" layoutX="417.0" layoutY="396.0" prefHeight="26.0" prefWidth="240.0" />
+      <PasswordField fx:id="passwordField" layoutX="417.0" layoutY="405.0" prefHeight="26.0" prefWidth="240.0" />
       <Separator layoutX="3.0" layoutY="246.0" prefHeight="0.0" prefWidth="1000.0" />
       <Separator layoutY="131.0" prefHeight="0.0" prefWidth="1000.0" />
       <Label alignment="CENTER" layoutX="1.0" layoutY="155.0" prefHeight="36.0" prefWidth="1002.0" text="Register">
@@ -28,11 +29,15 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <Button layoutX="347.0" layoutY="495.0" mnemonicParsing="false" onAction="#registerSubmit" prefHeight="30.0" prefWidth="318.0" style="-fx-background-color: #0ea5e9; -fx-text-fill: white;" text="Register" />
-      <Label fx:id="errorMessage" alignment="CENTER" layoutX="8.0" layoutY="440.0" prefHeight="21.0" prefWidth="1008.0" style="-fx-text-fill: red;">
+      <Button layoutX="343.0" layoutY="572.0" mnemonicParsing="false" onAction="#registerSubmit" prefHeight="30.0" prefWidth="318.0" style="-fx-background-color: #0ea5e9; -fx-text-fill: white;" text="Register" />
+      <Label fx:id="errorMessage" alignment="CENTER" layoutX="1.0" layoutY="530.0" prefHeight="21.0" prefWidth="1008.0" style="-fx-text-fill: red;">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
+      <ChoiceBox fx:id="roleField" layoutX="417.0" layoutY="448.0" prefHeight="26.0" prefWidth="240.0" />
+      <Label layoutX="343.0" layoutY="452.0" text="Role" />
+      <Label fx:id="expertiseLabel" layoutX="343.0" layoutY="488.0" text="Expertise" />
+      <TextField fx:id="expertiseField" layoutX="417.0" layoutY="484.0" prefHeight="26.0" prefWidth="240.0" />
    </children>
 </AnchorPane>

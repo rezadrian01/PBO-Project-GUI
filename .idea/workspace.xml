@@ -4,31 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cf3f2c8-8590-4e56-9a84-86828eaf2561" name="Changes" comment="feat: create MainMenuParticipant, and MainMenuSpeaker">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/interfaces/Printable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/interfaces/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/models/Participant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/models/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/models/Speaker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/utils/Data.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/utspemrogramanlanjut/json/Events.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/utspemrogramanlanjut/json/Persons.json" afterDir="false" />
+    <list default="true" id="0cf3f2c8-8590-4e56-9a84-86828eaf2561" name="Changes" comment="feat: create Data utils file">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/ParticipantMainMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/SpeakerMainMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controller/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/WelcomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/model/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/models/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/model/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/models/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/model/Participant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/model/Person.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/model/Speaker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/service/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/services/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/service/Auth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/services/Auth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/models/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/models/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/services/Auth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/services/Auth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/utils/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/utils/Data.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/utspemrogramanlanjut/fxml/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/utspemrogramanlanjut/fxml/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/utspemrogramanlanjut/fxml/ParticipantMainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/utspemrogramanlanjut/fxml/ParticipantMainMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/utspemrogramanlanjut/fxml/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/utspemrogramanlanjut/fxml/Register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/utspemrogramanlanjut/fxml/Welcome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/utspemrogramanlanjut/fxml/Welcome.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/utspemrogramanlanjut/fxml/SpeakerMainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/utspemrogramanlanjut/fxml/SpeakerMainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/utspemrogramanlanjut/json/Persons.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/utspemrogramanlanjut/json/Persons.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +131,7 @@
       <updated>1729170843468</updated>
       <workItem from="1729170844414" duration="11119000" />
       <workItem from="1729183556600" duration="1133000" />
-      <workItem from="1729204684025" duration="9253000" />
+      <workItem from="1729204684025" duration="17967000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -160,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729184430854</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: create Data utils file">
+      <option name="closed" value="true" />
+      <created>1729214000302</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1729214000302</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,7 +166,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="feat: create MainMenuParticipant, and MainMenuSpeaker" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: create MainMenuParticipant, and MainMenuSpeaker" />
+    <MESSAGE value="feat: create Data utils file" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: create Data utils file" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
