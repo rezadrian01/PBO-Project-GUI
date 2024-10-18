@@ -9,8 +9,16 @@ import javafx.stage.Stage;
 import org.example.utspemrogramanlanjut.services.Auth;
 
 public class SpeakerMainMenuController {
-    public void seeAllEvents(){
-
+    public void seeAllEvents(ActionEvent event){
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("/org/example/utspemrogramanlanjut/fxml/AllEvents.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     public void seeMyEvents(ActionEvent event){
@@ -23,7 +31,6 @@ public class SpeakerMainMenuController {
         }catch(Exception e){
             e.printStackTrace();
         }
-
     }
     public void myAccount(ActionEvent event){
         try{

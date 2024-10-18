@@ -16,7 +16,7 @@ public class Data {
     private final String jsonPath = "src/main/resources/org/example/utspemrogramanlanjut/json/";
 
     public ArrayList<Event> getEventList(){
-        ArrayList<Event> resultEventList = new ArrayList<Event>();
+        ArrayList<Event> resultEventList = new ArrayList<>();
         try{
             String eventContent = new String(Files.readAllBytes(Paths.get(jsonPath + "Events.json")));
             if(eventContent.isEmpty()){
@@ -36,22 +36,17 @@ public class Data {
                 );
                 // Add all participants
                 JSONArray participants = eventObject.getJSONArray("participants");
-                if(participants.length() != 0 && !participants.isEmpty()){
-                    for(int j = 0; j < participants.length(); j++){
-                        String participant = participants.getString(j);
-//                        participants.put();
-                        event.addParticipant(this.searchParticipantById(participant));
-                    }
+                for(int j = 0; j < participants.length(); j++){
+                    String participantId = participants.getString(j);
+                    event.addParticipant(this.searchParticipantById(participantId));
                 }
+
 
                 // Add all speakers
                 JSONArray speakers = eventObject.getJSONArray("speakers");
-                if(speakers.length() != 0 && !speakers.isEmpty()){
-                    for(int j = 0; j < speakers.length(); j++){
-                        String speaker = speakers.getString(j);
-//                        speakers.put();
-                        event.addSpeaker(this.searchSpeakerById(speaker));
-                    }
+                for(int j = 0; j < speakers.length(); j++){
+                    String speakerId = speakers.getString(j);
+                    event.addSpeaker(this.searchSpeakerById(speakerId));
                 }
                 resultEventList.add(event);
             }
@@ -142,7 +137,6 @@ public class Data {
             for(int i = 0; i < personLists.length(); i++){
                 JSONObject person = personLists.getJSONObject(i);
                 if(person.getString("id").equals(id)){
-
                     if(person.getString("role").equals("Participant")){
                         Participant participant = new Participant(person.getString("id"), person.getString("name"), person.getString("email"), person.getString("password"));
                         return participant;

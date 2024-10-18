@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -40,9 +41,9 @@ public class MyEventsController implements Initializable {
         if(events.isEmpty()) {
             return;
         }
+        fallbackText.setOpacity(0);
         // loop each event
-        for(Event event : events) {
-            fallbackText.setOpacity(0);
+        for (Event event : events) {
             Label label = new Label();
             label.setText(event.getName());
             label.setFont(new Font("Arial", 20));
@@ -50,26 +51,23 @@ public class MyEventsController implements Initializable {
 
             Hyperlink link = new Hyperlink();
             link.setText("See detail");
-            link.setAlignment(Pos.CENTER_RIGHT);
-            link.setOnAction(e -> {
-//                System.out.println(event.getName());
-                 Event.setSelectedEvent(event);
-                 seeEventDetail(e);
-            });
             link.setFont(new Font("Arial", 15));
+            link.setAlignment(Pos.BASELINE_RIGHT);
+            link.setOnAction(e -> {
+                Event.setSelectedEvent(event);
+                this.seeEventDetail(e);
+            });
 
-            HBox hbox = new HBox();
-            hbox.getChildren().addAll(label, link);
-            hbox.setSpacing(300);
-            hbox.setAlignment(Pos.CENTER);
-
-            container.setSpacing(10);
-            container.getChildren().addAll(hbox);
+            HBox hbox = new HBox(label, link);
+            HBox.setHgrow(label, Priority.ALWAYS);
+            hbox.setSpacing(10);
+            container.getChildren().add(hbox);
         }
 
     }
     public void seeEventDetail(ActionEvent event) {
         try{
+            EventDetailController.setBeforeMenu("myEvents");
             Parent root = FXMLLoader.load(getClass().getResource("/org/example/utspemrogramanlanjut/fxml/EventDetail.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();

@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 import org.example.utspemrogramanlanjut.models.Event;
 
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class EventDetailController implements Initializable {
@@ -33,6 +32,7 @@ public class EventDetailController implements Initializable {
     @FXML
     private Label errorMessage;
 
+    private static String menuBefore;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -55,7 +55,11 @@ public class EventDetailController implements Initializable {
 
     public void back(ActionEvent event) {
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("/org/example/utspemrogramanlanjut/fxml/MyEvents.fxml"));
+            String fxmlPath = "/org/example/utspemrogramanlanjut/fxml/MyEvents.fxml";
+            if(EventDetailController.menuBefore.equals("allEvents")){
+                fxmlPath = "/org/example/utspemrogramanlanjut/fxml/AllEvents.fxml";
+            }
+            Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
             Scene scene = new Scene(root);
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -64,6 +68,12 @@ public class EventDetailController implements Initializable {
             e.printStackTrace();
         }
 
+    }
+    public static String getBeforeMenu(){
+        return EventDetailController.menuBefore;
+    }
+    public static void setBeforeMenu(String menu){
+        EventDetailController.menuBefore = menu;
     }
     public void joinEventSubmit(ActionEvent event) {
 

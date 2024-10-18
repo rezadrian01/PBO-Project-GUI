@@ -7,10 +7,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #e8e8e8;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.utspemrogramanlanjut.controllers.AllEventsController">
    <children>
-      <Label alignment="CENTER" layoutX="10.0" layoutY="166.0" prefHeight="45.0" prefWidth="1016.0" text="My Events">
+      <Label alignment="CENTER" layoutX="10.0" layoutY="166.0" prefHeight="45.0" prefWidth="1016.0" text="All events">
          <font>
             <Font size="30.0" />
          </font>

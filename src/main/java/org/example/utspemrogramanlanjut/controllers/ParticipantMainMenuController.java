@@ -11,7 +11,15 @@ import org.example.utspemrogramanlanjut.services.Auth;
 public class ParticipantMainMenuController {
 
     public void seeAllEvents(ActionEvent event){
-
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("/org/example/utspemrogramanlanjut/fxml/AllEvents.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
     public void seeMyEvents(ActionEvent event){
         try{
