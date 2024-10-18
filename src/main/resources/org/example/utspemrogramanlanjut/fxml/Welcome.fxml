@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #e8e8e8;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.utspemrogramanlanjut.controller.WelcomeController">
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #e8e8e8;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.utspemrogramanlanjut.controllers.WelcomeController">
    <children>
       <Button fx:id="registerButton" alignment="CENTER" contentDisplay="CENTER" layoutX="403.0" layoutY="341.0" mnemonicParsing="false" onAction="#register" prefHeight="30.0" prefWidth="198.0" style="-fx-background-color: #0ea5e9; -fx-text-fill: white;" text="Register" />
       <Button fx:id="loginButton" layoutX="403.0" layoutY="381.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="198.0" style="-fx-background-color: #0ea5e9; -fx-text-fill: white;" text="Login" />

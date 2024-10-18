@@ -1,4 +1,4 @@
-package org.example.utspemrogramanlanjut.controller;
+package org.example.utspemrogramanlanjut.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

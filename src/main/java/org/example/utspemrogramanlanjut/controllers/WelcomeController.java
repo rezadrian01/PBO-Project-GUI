@@ -1,14 +1,11 @@
-package org.example.utspemrogramanlanjut.controller;
+package org.example.utspemrogramanlanjut.controllers;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import org.example.utspemrogramanlanjut.Main;
 
 public class WelcomeController {
     public void register(ActionEvent event){
