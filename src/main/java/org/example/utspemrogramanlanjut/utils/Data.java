@@ -8,7 +8,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.FileWriter;
-import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -37,15 +36,20 @@ public class Data {
                 );
                 // Add all participants
                 JSONArray participants = eventObject.getJSONArray("participants");
-                for(int j = 0; j < participants.length(); j++){
-                    String participant = participants.getString(j);
-                    participants.put(this.searchParticipantById(participant));
+                if(participants.length() != 0 && !participants.isEmpty()){
+                    for(int j = 0; j < participants.length(); j++){
+                        String participant = participants.getString(j);
+                        participants.put(this.searchParticipantById(participant));
+                    }
                 }
+
                 // Add all speakers
                 JSONArray speakers = eventObject.getJSONArray("speakers");
-                for(int j = 0; j < speakers.length(); j++){
-                    String speaker = speakers.getString(j);
-                    speakers.put(this.searchSpeakerById(speaker));
+                if(speakers.length() != 0 && !speakers.isEmpty()){
+                    for(int j = 0; j < speakers.length(); j++){
+                        String speaker = speakers.getString(j);
+                        speakers.put(this.searchSpeakerById(speaker));
+                    }
                 }
                 resultEventList.add(event);
             }
@@ -55,7 +59,7 @@ public class Data {
         return resultEventList;
     }
 
-    public void addEventsData(Event event){
+    public void addEventData(Event event){
         JSONArray jsonArray;
         try{
             JSONObject json = new JSONObject();
@@ -69,16 +73,20 @@ public class Data {
 
             // Add all participants
             JSONArray participants = new JSONArray();
-            for(Participant p : event.getParticipants()){
-                String participant = p.getId();
-                participants.put(participant);
+            if(!event.getParticipants().isEmpty() ){
+                for(Participant p : event.getParticipants()){
+                    String participant = p.getId();
+                    participants.put(participant);
+                }
             }
 
             // Add all speakers
             JSONArray speakers = new JSONArray();
-            for(Speaker s : event.getSpeakers()){
-                String speaker = s.getId();
-                speakers.put(speaker);
+            if(!event.getSpeakers().isEmpty() ){
+                for(Speaker s : event.getSpeakers()){
+                    String speaker = s.getId();
+                    speakers.put(speaker);
+                }
             }
 
             String eventContent = new String(Files.readAllBytes(Paths.get(jsonPath + "Events.json")));
@@ -126,7 +134,6 @@ public class Data {
 
     public Participant searchParticipantById(String id){
         try{
-//            InputStream inputStream = getClass().getClassLoader().getResourceAsStream("json/Persons.json");
             String personContent = new String(Files.readAllBytes(Paths.get(this.jsonPath + "Persons.json")));
             if(personContent.isEmpty()){
                 return null;
@@ -180,7 +187,6 @@ public class Data {
 
     public Person searchPersonByEmail(String email){
         try{
-//            InputStream inputStream = getClass().getClassLoader().getResourceAsStream("json/Persons.json");
             String personContent = new String(Files.readAllBytes(Paths.get(this.jsonPath + "Persons.json")));
             // If file Persons.json doesn't exist then return null
             if(personContent.isEmpty()){
@@ -206,5 +212,47 @@ public class Data {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public ArrayList<Event> searchEventListByPerson(Person person){
+        ArrayList<Event> events = new ArrayList<Event>();
+        try{
+            String eventContent = new String(Files.readAllBytes(Paths.get(this.jsonPath + "Events.json")));
+            if(eventContent.isEmpty()){
+                return null;
+            }
+            JSONArray eventLists = new JSONArray(eventContent);
+            // Loop each event
+            for(int i = 0; i < eventLists.length(); i++){
+                JSONObject event = eventLists.getJSONObject(i);
+                JSONArray personList;
+
+                if(person instanceof Speaker){
+                    personList = event.getJSONArray("speakers");
+                }else{
+                    personList = event.getJSONArray("participants");
+                }
+
+                // Loop each participant in current event
+                for(int p = 0; p < personList.length(); p++){
+                    JSONObject participant = personList.getJSONObject(p);
+                    // if id current participants match with current person then create new event object
+                    if(participant.getString("id").equals(person.getId())){
+                        // Create event object
+                        Event e = new Event(event.getString("id"),
+                                event.getString("name"),
+                                event.getString("description"),
+                                event.getString("location"),
+                                event.getString("date"),
+                                event.getString("startTime"),
+                                event.getString("endTime"));
+                        events.add(e);
+                    }
+                }
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return events;
     }
 }

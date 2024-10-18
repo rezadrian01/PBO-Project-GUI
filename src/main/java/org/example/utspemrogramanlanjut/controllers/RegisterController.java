@@ -56,12 +56,20 @@ public class RegisterController implements Initializable {
             errorMessage.setText("Failed to register.");
             return;
         }
-        Parent root = FXMLLoader.load(getClass().getResource("/org/example/utspemrogramanlanjut/fxml/Login.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+        this.toLogin(event);
 
+        }catch(Exception e){
+            errorMessage.setText(e.getMessage());
+        }
+    }
+
+    public void toLogin(ActionEvent event){
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("/org/example/utspemrogramanlanjut/fxml/Login.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
         }catch(Exception e){
             errorMessage.setText(e.getMessage());
         }

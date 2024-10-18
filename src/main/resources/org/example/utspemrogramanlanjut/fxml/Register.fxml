@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
@@ -39,5 +40,6 @@
       <Label layoutX="343.0" layoutY="452.0" text="Role" />
       <Label fx:id="expertiseLabel" layoutX="343.0" layoutY="488.0" text="Expertise" />
       <TextField fx:id="expertiseField" layoutX="417.0" layoutY="484.0" prefHeight="26.0" prefWidth="240.0" />
+      <Hyperlink layoutX="434.0" layoutY="625.0" onAction="#toLogin" text="Already have account?" />
    </children>
 </AnchorPane>

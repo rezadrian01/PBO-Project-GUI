@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #e8e8e8;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.utspemrogramanlanjut.controllers.CreateNewEventController">
+   <children>
+      <Label alignment="CENTER" layoutY="110.0" prefHeight="45.0" prefWidth="1000.0" text="Create new event">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Separator layoutX="1.0" layoutY="178.0" prefHeight="3.0" prefWidth="1020.0" />
+      <Separator layoutY="87.0" prefHeight="3.0" prefWidth="1026.0" />
+      <Label layoutX="299.0" layoutY="247.0" text="Event name">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="299.0" layoutY="305.0" text="Location">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="eventNameField" layoutX="423.0" layoutY="244.0" prefHeight="26.0" prefWidth="278.0" />
+      <TextField fx:id="eventLocationField" layoutX="423.0" layoutY="303.0" prefHeight="26.0" prefWidth="278.0" />
+      <TextArea fx:id="eventDescriptionArea" layoutX="424.0" layoutY="502.0" prefHeight="101.0" prefWidth="278.0" />
+      <Label layoutX="299.0" layoutY="371.0" text="Date">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="299.0" layoutY="440.0" text="Start time">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="eventStartTimeField" layoutX="423.0" layoutY="437.0" prefHeight="26.0" prefWidth="76.0" />
+      <DatePicker fx:id="eventDatePicker" layoutX="423.0" layoutY="369.0" prefHeight="26.0" prefWidth="278.0" />
+      <Label layoutX="300.0" layoutY="502.0" text="Description">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="530.0" layoutY="441.0" text="Start time">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="eventEndTimeField" layoutX="624.0" layoutY="438.0" prefHeight="26.0" prefWidth="76.0" />
+      <Button layoutX="293.0" layoutY="681.0" mnemonicParsing="false" onAction="#createNewEventSubmit" prefHeight="30.0" prefWidth="412.0" style="-fx-background-color: #0ea5e9; -fx-text-fill: white;" text="Create" />
+      <Label fx:id="errorMessage" alignment="CENTER" layoutY="633.0" prefHeight="17.0" prefWidth="1026.0" style="-fx-text-fill: red;" text="Failed to create event">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

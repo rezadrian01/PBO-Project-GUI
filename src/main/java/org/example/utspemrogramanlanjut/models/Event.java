@@ -18,6 +18,8 @@ public class Event {
     private ArrayList<String> participants = new ArrayList<String>();
     private ArrayList<String> speakers = new ArrayList<String>();
 
+    private static Event selectedEvent = null;
+
     public Event(String id, String name, String description, String location, String date, String startTime, String endTime) {
         this.id = id;
         this.name = name;
@@ -106,5 +108,13 @@ public class Event {
             speakers.add(data.searchSpeakerById(id));
         }
         return speakers;
+    }
+
+    public static void setSelectedEvent(Event selectedEvent) {
+        selectedEvent = selectedEvent;
+    }
+
+    public static Event getSelectedEvent() {
+        return Event.selectedEvent;
     }
 }

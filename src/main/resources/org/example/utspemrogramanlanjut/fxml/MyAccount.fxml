@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #e8e8e8;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.utspemrogramanlanjut.controllers.MyAccountController">
+   <children>
+      <Label alignment="CENTER" layoutY="142.0" prefHeight="45.0" prefWidth="1006.0" text="My Account">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Separator layoutX="1.0" layoutY="210.0" prefHeight="0.0" prefWidth="1000.0" />
+      <Separator layoutX="6.0" layoutY="119.0" prefHeight="0.0" prefWidth="1000.0" />
+      <Label layoutX="322.0" layoutY="377.0" text="Your name">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="323.0" layoutY="425.0" text="Your email">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="322.0" layoutY="478.0" text="Your role">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameField" layoutX="432.0" layoutY="374.0" prefHeight="26.0" prefWidth="234.0" />
+      <TextField fx:id="emailField" layoutX="432.0" layoutY="422.0" prefHeight="26.0" prefWidth="234.0" />
+      <TextField fx:id="roleField" layoutX="432.0" layoutY="475.0" prefHeight="26.0" prefWidth="234.0" />
+      <Button layoutX="319.0" layoutY="618.0" mnemonicParsing="false" onAction="#updateSubmit" prefHeight="30.0" prefWidth="347.0" style="-fx-background-color: #0ea5e9; -fx-text-fill: white;" text="Update data" />
+      <Hyperlink fx:id="backButton" layoutX="27.0" layoutY="241.0" onAction="#back" text="&lt; Back" />
+      <Label fx:id="expertiseLabel" layoutX="322.0" layoutY="527.0" text="Your expertise">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="expertiseField" layoutX="432.0" layoutY="524.0" prefHeight="26.0" prefWidth="234.0" />
+      <Label fx:id="errorMessage" layoutX="445.0" layoutY="581.0" style="-fx-text-fill: red;" text="Error message">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,20 +16,25 @@
       </Label>
       <Button layoutX="201.0" layoutY="347.0" mnemonicParsing="false" onAction="#seeAllEvents" prefHeight="42.0" prefWidth="134.0" text="All Events">
          <font>
-            <Font size="11.0" />
+            <Font size="15.0" />
          </font>
       </Button>
       <Button layoutX="433.0" layoutY="347.0" mnemonicParsing="false" onAction="#seeMyEvents" prefHeight="42.0" prefWidth="134.0" text="My Events">
          <font>
-            <Font size="11.0" />
+            <Font size="15.0" />
          </font>
       </Button>
       <Button layoutX="669.0" layoutY="347.0" mnemonicParsing="false" onAction="#myAccount" prefHeight="42.0" prefWidth="134.0" text="My Account">
          <font>
-            <Font size="11.0" />
+            <Font size="15.0" />
          </font>
       </Button>
       <Separator layoutX="10.0" layoutY="219.0" prefHeight="0.0" prefWidth="1000.0" />
       <Separator layoutX="5.0" layoutY="148.0" prefHeight="0.0" prefWidth="1000.0" />
+      <Hyperlink layoutX="913.0" layoutY="738.0" onAction="#logout" text="Logout">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Hyperlink>
    </children>
 </AnchorPane>

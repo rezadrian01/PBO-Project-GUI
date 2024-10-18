@@ -37,7 +37,7 @@ public class LoginController {
             }
 
             // Redirect to main menu base on role
-            if(auth.getLoggedInUser() instanceof Speaker){
+            if(Auth.getLoggedInUser() instanceof Speaker){
                 Parent root = FXMLLoader.load(getClass().getResource("/org/example/utspemrogramanlanjut/fxml/SpeakerMainMenu.fxml"));
                 Scene scene = new Scene(root);
                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -51,6 +51,17 @@ public class LoginController {
                 stage.show();
             }
 
+        }catch(Exception e){
+            errorMessage.setText(e.getMessage());
+        }
+    }
+    public void toRegister(ActionEvent event){
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("/org/example/utspemrogramanlanjut/fxml/Register.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
         }catch(Exception e){
             errorMessage.setText(e.getMessage());
         }

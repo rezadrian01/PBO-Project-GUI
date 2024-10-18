@@ -6,7 +6,7 @@ import org.example.utspemrogramanlanjut.models.Speaker;
 import org.example.utspemrogramanlanjut.utils.Data;
 
 public class Auth {
-    private Person loggedInUser = null;
+    private static Person loggedInUser = null;
     private final Data data = new Data();
 
     public boolean register(String name, String email, String password, String role, String expertise){
@@ -38,15 +38,15 @@ public class Auth {
         if(!existingPerson.validatePassword(password)){
             return false;
         }
-        this.loggedInUser = existingPerson;
+        Auth.loggedInUser = existingPerson;
         return true;
     }
 
-    public void logout(){
-        this.loggedInUser = null;
+    public static void logout(){
+        Auth.loggedInUser = null;
     }
 
-    public Person getLoggedInUser(){
-        return this.loggedInUser;
+    public static Person getLoggedInUser(){
+        return Auth.loggedInUser;
     }
 }
