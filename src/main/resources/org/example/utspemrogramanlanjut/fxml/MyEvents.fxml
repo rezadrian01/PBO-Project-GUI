@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -22,5 +23,6 @@
             <Font size="15.0" />
          </font>
       </Label>
+      <Hyperlink fx:id="backButton" layoutX="37.0" layoutY="236.0" onAction="#back" text="&lt; Back" />
    </children>
 </AnchorPane>

@@ -10,6 +10,10 @@ public class Participant extends Person implements Role, Printable {
         super(name, email, password);
         this.role = "Participant";
     }
+    public Participant(String id, String name, String email, String password){
+        super(id, name, email, password);
+        this.role = "Participant";
+    }
 
     @Override
     public JSONObject toJSON(){

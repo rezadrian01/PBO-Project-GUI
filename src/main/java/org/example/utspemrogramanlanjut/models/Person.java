@@ -17,9 +17,15 @@ public class Person {
         this.password = password;
         this.id = UUID.randomUUID().toString();
     }
+    public Person(String id, String name, String email, String password) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+    }
 
     public String getId() {
-        return id;
+        return this.id;
     }
 
     public String getName(){

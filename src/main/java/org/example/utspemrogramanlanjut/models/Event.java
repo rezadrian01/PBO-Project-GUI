@@ -18,7 +18,7 @@ public class Event {
     private ArrayList<String> participants = new ArrayList<String>();
     private ArrayList<String> speakers = new ArrayList<String>();
 
-    private static Event selectedEvent = null;
+    private static Event selectedEvent;
 
     public Event(String id, String name, String description, String location, String date, String startTime, String endTime) {
         this.id = id;
@@ -103,7 +103,7 @@ public class Event {
     }
     public ArrayList<Speaker> getSpeakers(){
         Data data = new Data();
-        ArrayList<Speaker> speakers = new ArrayList<Speaker>();
+        ArrayList<Speaker> speakers = new ArrayList<>();
         for(String id: this.speakers) {
             speakers.add(data.searchSpeakerById(id));
         }
@@ -111,7 +111,7 @@ public class Event {
     }
 
     public static void setSelectedEvent(Event selectedEvent) {
-        selectedEvent = selectedEvent;
+        Event.selectedEvent = selectedEvent;
     }
 
     public static Event getSelectedEvent() {

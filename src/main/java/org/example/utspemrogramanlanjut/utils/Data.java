@@ -39,7 +39,8 @@ public class Data {
                 if(participants.length() != 0 && !participants.isEmpty()){
                     for(int j = 0; j < participants.length(); j++){
                         String participant = participants.getString(j);
-                        participants.put(this.searchParticipantById(participant));
+//                        participants.put();
+                        event.addParticipant(this.searchParticipantById(participant));
                     }
                 }
 
@@ -48,7 +49,8 @@ public class Data {
                 if(speakers.length() != 0 && !speakers.isEmpty()){
                     for(int j = 0; j < speakers.length(); j++){
                         String speaker = speakers.getString(j);
-                        speakers.put(this.searchSpeakerById(speaker));
+//                        speakers.put();
+                        event.addSpeaker(this.searchSpeakerById(speaker));
                     }
                 }
                 resultEventList.add(event);
@@ -73,21 +75,18 @@ public class Data {
 
             // Add all participants
             JSONArray participants = new JSONArray();
-            if(!event.getParticipants().isEmpty() ){
                 for(Participant p : event.getParticipants()){
                     String participant = p.getId();
                     participants.put(participant);
                 }
-            }
-
+            json.put("participants", participants);
             // Add all speakers
             JSONArray speakers = new JSONArray();
-            if(!event.getSpeakers().isEmpty() ){
                 for(Speaker s : event.getSpeakers()){
                     String speaker = s.getId();
                     speakers.put(speaker);
                 }
-            }
+            json.put("speakers", speakers);
 
             String eventContent = new String(Files.readAllBytes(Paths.get(jsonPath + "Events.json")));
             if(eventContent.isEmpty()){
@@ -145,7 +144,7 @@ public class Data {
                 if(person.getString("id").equals(id)){
 
                     if(person.getString("role").equals("Participant")){
-                        Participant participant = new Participant(person.getString("name"), person.getString("email"), person.getString("password"));
+                        Participant participant = new Participant(person.getString("id"), person.getString("name"), person.getString("email"), person.getString("password"));
                         return participant;
                     }
 
@@ -171,7 +170,11 @@ public class Data {
                 if(person.getString("id").equals(id)){
 
                     if(person.getString("role").equals("Speaker")){
-                        Speaker speaker = new Speaker(person.getString("name"), person.getString("email"), person.getString("password"), person.getString("expertise"));
+                        Speaker speaker = new Speaker(person.getString("id"),
+                                person.getString("name"),
+                                person.getString("email"),
+                                person.getString("password"),
+                                person.getString("expertise"));
                         return speaker;
                     }
 
@@ -200,10 +203,10 @@ public class Data {
                 if(person.getString("email").equals(email)){
                     // create new person object
                     if(person.getString("role").equals("Participant")){
-                        Participant participant = new Participant(person.getString("name"), person.getString("email"), person.getString("password"));
+                        Participant participant = new Participant(person.getString("id"), person.getString("name"), person.getString("email"), person.getString("password"));
                         return participant;
                     }else{
-                        Speaker speaker = new Speaker(person.getString("name"), person.getString("email"), person.getString("password"), person.getString("expertise"));
+                        Speaker speaker = new Speaker(person.getString("id"), person.getString("name"), person.getString("email"), person.getString("password"), person.getString("expertise"));
                         return speaker;
                     }
                 }
@@ -215,7 +218,7 @@ public class Data {
     }
 
     public ArrayList<Event> searchEventListByPerson(Person person){
-        ArrayList<Event> events = new ArrayList<Event>();
+        ArrayList<Event> events = new ArrayList<>();
         try{
             String eventContent = new String(Files.readAllBytes(Paths.get(this.jsonPath + "Events.json")));
             if(eventContent.isEmpty()){
@@ -226,18 +229,15 @@ public class Data {
             for(int i = 0; i < eventLists.length(); i++){
                 JSONObject event = eventLists.getJSONObject(i);
                 JSONArray personList;
-
                 if(person instanceof Speaker){
                     personList = event.getJSONArray("speakers");
                 }else{
                     personList = event.getJSONArray("participants");
                 }
-
-                // Loop each participant in current event
+                // Loop each participant or speaker in current event
                 for(int p = 0; p < personList.length(); p++){
-                    JSONObject participant = personList.getJSONObject(p);
                     // if id current participants match with current person then create new event object
-                    if(participant.getString("id").equals(person.getId())){
+                    if(personList.getString(p).equals(person.getId())){
                         // Create event object
                         Event e = new Event(event.getString("id"),
                                 event.getString("name"),
@@ -250,9 +250,10 @@ public class Data {
                     }
                 }
             }
+            return events;
         }catch(Exception e){
             e.printStackTrace();
         }
-        return events;
+        return null;
     }
 }

@@ -6,23 +6,53 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.example.utspemrogramanlanjut.services.Auth;
 
 public class SpeakerMainMenuController {
     public void seeAllEvents(){
 
     }
 
-    public void seeMyEvents(){
+    public void seeMyEvents(ActionEvent event){
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("/org/example/utspemrogramanlanjut/fxml/MyEvents.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
 
     }
-    public void myAccount(){
-
+    public void myAccount(ActionEvent event){
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("/org/example/utspemrogramanlanjut/fxml/MyAccount.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
     public void createNewEvent(ActionEvent event){
         try{
             Parent root = FXMLLoader.load(getClass().getResource("/org/example/utspemrogramanlanjut/fxml/CreateNewEvent.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    public void logout(ActionEvent event){
+        try{
+            Auth.logout();
+            Parent root = FXMLLoader.load(getClass().getResource("/org/example/utspemrogramanlanjut/fxml/Welcome.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
         }catch (Exception e){

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #e8e8e8;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.utspemrogramanlanjut.controllers.AllEventsController">
+   <children>
+      <Label alignment="CENTER" layoutX="10.0" layoutY="166.0" prefHeight="45.0" prefWidth="1016.0" text="My Events">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Separator layoutX="21.0" layoutY="230.0" prefHeight="0.0" prefWidth="1000.0" />
+      <Separator layoutX="26.0" layoutY="139.0" prefHeight="0.0" prefWidth="1000.0" />
+      <VBox fx:id="container" layoutX="143.0" layoutY="310.0" prefHeight="200.0" prefWidth="756.0" />
+      <Label fx:id="fallbackText" alignment="CENTER" layoutY="281.0" prefHeight="21.0" prefWidth="1026.0" text="Event is empty">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Hyperlink fx:id="backButton" layoutX="47.0" layoutY="246.0" onAction="#back" text="&lt; Back" />
+   </children>
+</AnchorPane>

@@ -12,6 +12,11 @@ public class Speaker extends Person implements Role, Printable {
         this.expertise = expertise;
         this.role = "Speaker";
     }
+    public Speaker(String id, String name, String email, String password, String expertise){
+        super(id, name, email, password);
+        this.expertise = expertise;
+        this.role = "Speaker";
+    }
 
     public String getExpertise() {
         return this.expertise;
