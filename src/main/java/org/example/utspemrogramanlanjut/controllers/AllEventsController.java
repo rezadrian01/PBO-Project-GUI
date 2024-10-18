@@ -33,7 +33,7 @@ public class AllEventsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Data data = new Data();
-        ArrayList<Event> events = data.getEventList();
+        ArrayList<Event> events = Event.getEventList();
 
         if (events.isEmpty()) {
             return;

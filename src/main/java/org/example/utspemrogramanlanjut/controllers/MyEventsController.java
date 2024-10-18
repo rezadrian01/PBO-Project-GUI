@@ -37,7 +37,7 @@ public class MyEventsController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Person currentPerson = Auth.getLoggedInUser();
         Data data = new Data();
-        ArrayList<Event> events = data.searchEventListByPerson(currentPerson);
+        ArrayList<Event> events = Event.searchEventListByPerson(currentPerson);
         if(events.isEmpty()) {
             return;
         }

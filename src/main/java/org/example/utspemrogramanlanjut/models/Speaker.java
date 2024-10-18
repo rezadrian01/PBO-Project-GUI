@@ -2,7 +2,12 @@ package org.example.utspemrogramanlanjut.models;
 
 import org.example.utspemrogramanlanjut.interfaces.Printable;
 import org.example.utspemrogramanlanjut.interfaces.Role;
+import org.example.utspemrogramanlanjut.utils.Data;
+import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class Speaker extends Person implements Role, Printable {
     private String expertise;
@@ -44,5 +49,36 @@ public class Speaker extends Person implements Role, Printable {
     @Override
     public void printTicket(Event event){
         System.out.println("Ticket for speaker " + this.getName() + " on event " + event.getName());
+    }
+
+    // Static methods
+    public static Speaker searchSpeakerById(String id){
+        try{
+            String personContent = new String(Files.readAllBytes(Paths.get(Data.jsonPath + "Persons.json")));
+            if(personContent.isEmpty()){
+                return null;
+            }
+            JSONArray personLists = new JSONArray(personContent);
+
+            for(int i = 0; i < personLists.length(); i++){
+                JSONObject person = personLists.getJSONObject(i);
+                if(person.getString("id").equals(id)){
+
+                    if(person.getString("role").equals("Speaker")){
+                        Speaker speaker = new Speaker(person.getString("id"),
+                                person.getString("name"),
+                                person.getString("email"),
+                                person.getString("password"),
+                                person.getString("expertise"));
+                        return speaker;
+                    }
+
+                }
+            }
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
     }
 }

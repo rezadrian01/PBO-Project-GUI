@@ -10,7 +10,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import org.example.utspemrogramanlanjut.models.Event;
-import org.example.utspemrogramanlanjut.models.Person;
 import org.example.utspemrogramanlanjut.models.Speaker;
 import org.example.utspemrogramanlanjut.services.Auth;
 import org.example.utspemrogramanlanjut.utils.Data;
@@ -67,7 +66,7 @@ public class CreateNewEventController implements Initializable {
 
         Event newEvent = new Event(eventId, eventName, eventDescription, eventLocation, formattedEventDate, eventStartTime, eventEndTime);
         newEvent.addSpeaker((Speaker)Auth.getLoggedInUser());
-        data.addEventData(newEvent);
+        Event.save(newEvent);
         this.back(event);
     }
 
