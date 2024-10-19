@@ -127,7 +127,7 @@ public class Event {
         try{
             String eventContent = new String(Files.readAllBytes(Paths.get(Data.jsonPath + "Events.json")));
             if(eventContent.isEmpty()){
-                return null;
+                return resultEventList;
             }
             JSONArray eventList = new JSONArray(eventContent);
 
@@ -258,7 +258,7 @@ public class Event {
         try{
             String eventContent = new String(Files.readAllBytes(Paths.get(Data.jsonPath + "Events.json")));
             if(eventContent.isEmpty()){
-                return null;
+                return events;
             }
             JSONArray eventLists = new JSONArray(eventContent);
             // Loop each event

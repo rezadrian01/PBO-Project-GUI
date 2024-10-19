@@ -37,10 +37,11 @@ public class AllEventsController implements Initializable {
         Data data = new Data();
         ArrayList<Event> events = Event.getEventList();
 
+        System.out.println(events.isEmpty());
         if (events.isEmpty()) {
             return;
         }
-        fallbackText.setVisible(false);
+        fallbackText.setOpacity(0);
 
         for (Event event : events) {
             Label label = new Label();

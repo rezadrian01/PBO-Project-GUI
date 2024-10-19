@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="UTS-Pemrograman-Lanjut:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cf3f2c8-8590-4e56-9a84-86828eaf2561" name="Changes" comment="feat: create update profile functionality">
+    <list default="true" id="0cf3f2c8-8590-4e56-9a84-86828eaf2561" name="Changes" comment="refactor: move code in Main to App and use Main file to be entry point">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/UTS_Pemrograman_Lanjut_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/Events.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/Persons.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/AllEventsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/AllEventsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/utils/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/utils/Data.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,32 +74,39 @@
   "keyToString": {
     "Application.HelloApplication.executor": "Debug",
     "Application.Main.executor": "Debug",
+    "Maven.UTS-Pemrograman-Lanjut [clean,javafx:run].executor": "Run",
     "Maven.UTS-Pemrograman-Lanjut [clean].executor": "Run",
+    "Maven.UTS-Pemrograman-Lanjut [install].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/KULIAH/UM/3. SEMESTER 3/7. PEMROGRAMAN LANJUT/Ujian Tengah Semester/Project/4. V4/UTS-Pemrograman-Lanjut/src/main/java/org/example/utspemrogramanlanjut",
+    "last_opened_file_path": "D:/KULIAH/UM/3. SEMESTER 3/7. PEMROGRAMAN LANJUT/Ujian Tengah Semester/Project/4. V4/UTS-Pemrograman-Lanjut/data",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.41149426",
+    "project.structure.side.proportion": "0.20647483",
     "settings.editor.selected.configurable": "MavenSettings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\KULIAH\UM\3. SEMESTER 3\7. PEMROGRAMAN LANJUT\Ujian Tengah Semester\Project\4. V4\UTS-Pemrograman-Lanjut\out\artifacts\UTS_Pemrograman_Lanjut_jar" />
+      <recent name="D:\KULIAH\UM\3. SEMESTER 3\7. PEMROGRAMAN LANJUT\Ujian Tengah Semester\Project\4. V4\UTS-Pemrograman-Lanjut\data" />
       <recent name="D:\KULIAH\UM\3. SEMESTER 3\7. PEMROGRAMAN LANJUT\Ujian Tengah Semester\Project\4. V4\UTS-Pemrograman-Lanjut\src\main\java\org\example\utspemrogramanlanjut" />
     </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
+      <command value="mvn clean javafx:run" />
       <command value="mvn clean" />
+      <command value="mvn install" />
     </option>
   </component>
   <component name="RunManager">
@@ -214,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729298597022</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="refactor: move code in Main to App and use Main file to be entry point">
+      <option name="closed" value="true" />
+      <created>1729306551591</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1729306551591</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,7 +256,8 @@
     <MESSAGE value="refactor: move the code in the data util file to its class" />
     <MESSAGE value="refactor: create join event functionality" />
     <MESSAGE value="feat: create update profile functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: create update profile functionality" />
+    <MESSAGE value="refactor: move code in Main to App and use Main file to be entry point" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: move code in Main to App and use Main file to be entry point" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
