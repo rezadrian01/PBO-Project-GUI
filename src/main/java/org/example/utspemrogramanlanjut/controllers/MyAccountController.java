@@ -11,6 +11,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.example.utspemrogramanlanjut.models.Participant;
 import org.example.utspemrogramanlanjut.models.Person;
 import org.example.utspemrogramanlanjut.models.Speaker;
 import org.example.utspemrogramanlanjut.services.Auth;
@@ -51,8 +52,26 @@ public class MyAccountController implements Initializable {
         }
         roleField.setDisable(true);
     }
-    public void updateSubmit(){
-
+    public void updateSubmit(ActionEvent event){
+        String name = nameField.getText();
+        String email = emailField.getText();
+        String expertise = expertiseField.getText();
+        if(Auth.getLoggedInUser() instanceof Speaker){
+            if(!((Speaker) Auth.getLoggedInUser()).updateProfile(name, email, expertise)){
+                errorMessage.setVisible(true);
+                errorMessage.setText("Email already used");
+                return;
+            }
+            Person.updateSave(Auth.getLoggedInUser());
+        }else{
+            if(!((Participant)Auth.getLoggedInUser()).updateProfile(name, email)){
+                errorMessage.setVisible(true);
+                errorMessage.setText("Email already used");
+                return;
+            }
+            Person.updateSave(Auth.getLoggedInUser());
+        }
+        this.back(event);
     }
     public void back(ActionEvent event){
         try{

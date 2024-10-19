@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="0cf3f2c8-8590-4e56-9a84-86828eaf2561" name="Changes" comment="refactor: create join event functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/AllEventsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/AllEventsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/EventDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/EventDetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/MyAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/MyAccountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/models/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/models/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/utspemrogramanlanjut/fxml/EventDetail.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/utspemrogramanlanjut/fxml/EventDetail.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/models/Participant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/models/Participant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/models/Speaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/models/Speaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/services/Auth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/services/Auth.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/utspemrogramanlanjut/json/Events.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/utspemrogramanlanjut/json/Events.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/example/utspemrogramanlanjut/json/Persons.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/example/utspemrogramanlanjut/json/Persons.json" afterDir="false" />
     </list>
@@ -129,7 +132,7 @@
       <workItem from="1729170844414" duration="11119000" />
       <workItem from="1729183556600" duration="1133000" />
       <workItem from="1729204684025" duration="46659000" />
-      <workItem from="1729293904178" duration="2707000" />
+      <workItem from="1729293904178" duration="4558000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -195,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729295346059</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="refactor: create join event functionality">
+      <option name="closed" value="true" />
+      <created>1729296838651</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1729296838651</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

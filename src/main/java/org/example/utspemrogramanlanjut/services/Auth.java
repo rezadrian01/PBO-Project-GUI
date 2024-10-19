@@ -9,7 +9,6 @@ public class Auth {
 
     public boolean register(String name, String email, String password, String role, String expertise){
         Person existingPerson = Person.searchPersonByEmail(email);
-
         // If person with that email already used then return false
         if(existingPerson != null){
             return false;

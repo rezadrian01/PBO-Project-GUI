@@ -33,15 +33,6 @@ public class Event {
         this.endTime = endTime;
     }
 
-    public void updateEvent(String name, String description, String location, String date, String startTime, String endTime) {
-        this.name = name;
-        this.description = description;
-        this.location = location;
-        this.date = date;
-        this.startTime = startTime;
-        this.endTime = endTime;
-    }
-
     public JSONObject toJSON() {
         JSONObject json = new JSONObject();
         json.put("id", this.id);
@@ -215,7 +206,7 @@ public class Event {
         }
     }
 
-    public static void update(Event event){
+    public static void updateSave(Event event){
         JSONArray jsonArray;
         try{
             JSONObject json = new JSONObject();

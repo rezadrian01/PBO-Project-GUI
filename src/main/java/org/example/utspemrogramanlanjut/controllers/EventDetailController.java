@@ -93,7 +93,7 @@ public class EventDetailController implements Initializable {
         }else{
             currentEvent.addParticipant((Participant)Auth.getLoggedInUser());
         }
-        Event.update(currentEvent);
+        Event.updateSave(currentEvent);
         this.back(event);
     }
 }

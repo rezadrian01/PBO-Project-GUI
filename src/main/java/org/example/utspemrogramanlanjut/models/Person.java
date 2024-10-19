@@ -11,8 +11,8 @@ import java.util.UUID;
 
 public class Person {
     private final String id;
-    private String name;
-    private String email;
+    protected String name;
+    protected String email;
     private final String password;
     protected String role;
 
@@ -50,7 +50,6 @@ public class Person {
     protected String getPassword(){
         return this.password;
     }
-
     public JSONObject toJSON(){
         JSONObject json = new JSONObject();
         json.put("id", this.id);
@@ -85,6 +84,34 @@ public class Person {
             }
             // Add new person to file
             jsonArray.put(json);
+            FileWriter fileWriter = new FileWriter(Data.jsonPath + "Persons.json");
+            fileWriter.write(jsonArray.toString(4));
+            fileWriter.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    public static void updateSave(Person person){
+        try{
+            JSONObject json;
+            if(person instanceof Speaker){
+                json = ((Speaker)person).toJSON();
+            }else{
+                json = ((Participant)person).toJSON();
+            }
+
+            // Get all person from file
+            String personContent = new String(Files.readAllBytes(Paths.get(Data.jsonPath + "Persons.json")));
+            JSONArray jsonArray = new JSONArray(personContent);
+
+            for(int i = 0; i < jsonArray.length(); i++){
+                JSONObject currentPerson = jsonArray.getJSONObject(i);
+                if(currentPerson.getString("id").equals(person.getId())){
+                    jsonArray.put(i, json);
+                    break;
+                }
+            }
+
             FileWriter fileWriter = new FileWriter(Data.jsonPath + "Persons.json");
             fileWriter.write(jsonArray.toString(4));
             fileWriter.close();

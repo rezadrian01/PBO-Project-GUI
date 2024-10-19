@@ -2,6 +2,7 @@ package org.example.utspemrogramanlanjut.models;
 
 import org.example.utspemrogramanlanjut.interfaces.Printable;
 import org.example.utspemrogramanlanjut.interfaces.Role;
+import org.example.utspemrogramanlanjut.services.Auth;
 import org.example.utspemrogramanlanjut.utils.Data;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -29,6 +30,18 @@ public class Participant extends Person implements Role, Printable {
         json.put("password", this.getPassword());
         json.put("role", this.getRole());
         return json;
+    }
+    public boolean updateProfile(String name, String email){
+        // Validation
+        Person existingPerson = Person.searchPersonByEmail(email);
+        // If current person change the email and person with that email already used then return false
+        if(!Auth.getLoggedInUser().getEmail().equals(email) && existingPerson != null){
+            return false;
+        }
+
+        this.name = name;
+        this.email = email;
+        return true;
     }
 
     @Override
