@@ -40,8 +40,6 @@ public class CreateNewEventController implements Initializable {
 
 
     public void createNewEventSubmit(ActionEvent event) {
-        Data data = new Data();
-
         if(eventDatePicker.getValue() == null) {
             errorMessage.setVisible(true);
             errorMessage.setText("Please select a date");

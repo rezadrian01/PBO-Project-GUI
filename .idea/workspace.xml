@@ -9,15 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cf3f2c8-8590-4e56-9a84-86828eaf2561" name="Changes" comment="refactor: move code in Main to App and use Main file to be entry point">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/UTS_Pemrograman_Lanjut_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/Events.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/Persons.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+    <list default="true" id="0cf3f2c8-8590-4e56-9a84-86828eaf2561" name="Changes" comment="feat: create app output folder and fix some minor bug when get empty event">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/UTS_Pemrograman_Lanjut_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/UTS_Pemrograman_Lanjut_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/AllEventsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/AllEventsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/utils/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/utils/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/CreateNewEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/CreateNewEventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/MyEventsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/controllers/MyEventsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/models/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utspemrogramanlanjut/models/Event.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +80,7 @@
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/KULIAH/UM/3. SEMESTER 3/7. PEMROGRAMAN LANJUT/Ujian Tengah Semester/Project/4. V4/UTS-Pemrograman-Lanjut/data",
+    "last_opened_file_path": "D:/KULIAH/UM/3. SEMESTER 3/7. PEMROGRAMAN LANJUT/Ujian Tengah Semester/Project/4. V4/UTS-Pemrograman-Lanjut/out/artifacts/UTS_Pemrograman_Lanjut_jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -239,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729306551591</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat: create app output folder and fix some minor bug when get empty event">
+      <option name="closed" value="true" />
+      <created>1729310431769</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1729310431769</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +263,8 @@
     <MESSAGE value="refactor: create join event functionality" />
     <MESSAGE value="feat: create update profile functionality" />
     <MESSAGE value="refactor: move code in Main to App and use Main file to be entry point" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: move code in Main to App and use Main file to be entry point" />
+    <MESSAGE value="feat: create app output folder and fix some minor bug when get empty event" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: create app output folder and fix some minor bug when get empty event" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

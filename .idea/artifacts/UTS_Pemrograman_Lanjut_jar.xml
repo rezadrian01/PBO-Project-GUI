@@ -72,6 +72,8 @@
       <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-23_windows-x64_bin-sdk/javafx-sdk-23/bin/api-ms-win-crt-process-l1-1-0.dll" />
       <element id="file-copy" path="$USER_HOME$/Downloads/openjfx-23_windows-x64_bin-sdk/javafx-sdk-23/bin/vcruntime140_1.dll" />
       <element id="dir-copy" path="$PROJECT_DIR$/data" />
+      <element id="file-copy" path="$PROJECT_DIR$/data/Persons.json" />
+      <element id="file-copy" path="$PROJECT_DIR$/data/Events.json" />
     </root>
   </artifact>
 </component>

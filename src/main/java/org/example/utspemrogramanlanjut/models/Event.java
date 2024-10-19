@@ -96,7 +96,6 @@ public class Event {
     }
 
     public ArrayList<Participant> getParticipants(){
-        Data data = new Data();
         ArrayList<Participant> participants = new ArrayList<Participant>();
         for(String id: this.participants) {
             participants.add(Participant.searchParticipantById(id));
@@ -104,7 +103,6 @@ public class Event {
         return participants;
     }
     public ArrayList<Speaker> getSpeakers(){
-        Data data = new Data();
         ArrayList<Speaker> speakers = new ArrayList<>();
         for(String id: this.speakers) {
             speakers.add(Speaker.searchSpeakerById(id));
