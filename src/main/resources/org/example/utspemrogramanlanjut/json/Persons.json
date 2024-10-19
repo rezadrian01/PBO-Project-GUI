@@ -1,0 +1,17 @@
+[
+    {
+        "password": "123",
+        "role": "Speaker",
+        "name": "ahmad reza",
+        "id": "e1f579fe-529a-44d9-8692-a393223edadc",
+        "expertise": "Web Dev",
+        "email": "ahmad@gmail.com"
+    },
+    {
+        "password": "123",
+        "role": "Participant",
+        "name": "reza adrian",
+        "id": "a422780f-2fff-4b28-859e-9094329bb285",
+        "email": "reza1@gmail.com"
+    }
+]

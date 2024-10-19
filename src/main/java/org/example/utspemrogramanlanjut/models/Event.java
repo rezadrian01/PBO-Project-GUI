@@ -62,7 +62,7 @@ public class Event {
 
     public void addSpeaker(Speaker speaker){
         // Check if current speaker already registered on this event
-        if(this.participants.contains(speaker.getId())){
+        if(this.speakers.contains(speaker.getId())){
             return;
         }
         this.speakers.add(speaker.getId());
