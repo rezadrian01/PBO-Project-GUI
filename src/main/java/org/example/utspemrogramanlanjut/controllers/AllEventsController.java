@@ -16,6 +16,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import org.example.utspemrogramanlanjut.models.Event;
+import org.example.utspemrogramanlanjut.models.Speaker;
+import org.example.utspemrogramanlanjut.services.Auth;
 import org.example.utspemrogramanlanjut.utils.Data;
 
 import java.net.URL;
@@ -76,7 +78,11 @@ public class AllEventsController implements Initializable {
     }
     public void back(ActionEvent event) {
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("/org/example/utspemrogramanlanjut/fxml/SpeakerMainMenu.fxml"));
+            String fxmlPath = "/org/example/utspemrogramanlanjut/fxml/ParticipantMainMenu.fxml";
+            if(Auth.getLoggedInUser() instanceof Speaker){
+                fxmlPath = "/org/example/utspemrogramanlanjut/fxml/SpeakerMainMenu.fxml";
+            }
+            Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);

@@ -10,6 +10,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import org.example.utspemrogramanlanjut.models.Event;
+import org.example.utspemrogramanlanjut.models.Participant;
+import org.example.utspemrogramanlanjut.models.Speaker;
+import org.example.utspemrogramanlanjut.services.Auth;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -31,6 +34,8 @@ public class EventDetailController implements Initializable {
     private Hyperlink backButton;
     @FXML
     private Label errorMessage;
+    @FXML
+    private Button joinButton;
 
     private static String menuBefore;
 
@@ -51,6 +56,12 @@ public class EventDetailController implements Initializable {
         eventEndTimeField.setText(eventEndTime);
 
         errorMessage.setVisible(false);
+        if(!EventDetailController.menuBefore.equals("allEvents")){
+            joinButton.setVisible(false);
+        }
+        if(Auth.getLoggedInUser() instanceof Speaker){
+            joinButton.setText("Join as speaker");
+        }
     }
 
     public void back(ActionEvent event) {
@@ -76,6 +87,13 @@ public class EventDetailController implements Initializable {
         EventDetailController.menuBefore = menu;
     }
     public void joinEventSubmit(ActionEvent event) {
-
+        Event currentEvent = Event.getSelectedEvent();
+        if(Auth.getLoggedInUser() instanceof Speaker){
+            currentEvent.addSpeaker((Speaker)Auth.getLoggedInUser());
+        }else{
+            currentEvent.addParticipant((Participant)Auth.getLoggedInUser());
+        }
+        Event.update(currentEvent);
+        this.back(event);
     }
 }

@@ -57,6 +57,10 @@ public class Event {
     }
 
     public void addParticipant(Participant participant){
+        // Check if current participant already registered on this event
+        if(this.participants.contains(participant.getId())){
+            return;
+        }
         this.participants.add(participant.getId());
     }
     // Overloading
@@ -66,6 +70,10 @@ public class Event {
     }
 
     public void addSpeaker(Speaker speaker){
+        // Check if current speaker already registered on this event
+        if(this.participants.contains(speaker.getId())){
+            return;
+        }
         this.speakers.add(speaker.getId());
     }
     // Overloading
@@ -198,6 +206,53 @@ public class Event {
                 jsonArray = new JSONArray(eventContent);
             }
             jsonArray.put(json);
+            FileWriter fileWriter = new FileWriter(Data.jsonPath + "Events.json");
+            fileWriter.write(jsonArray.toString(4));
+            fileWriter.close();
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void update(Event event){
+        JSONArray jsonArray;
+        try{
+            JSONObject json = new JSONObject();
+            json.put("id", event.getId());
+            json.put("name", event.getName());
+            json.put("description", event.getDescription());
+            json.put("location", event.getLocation());
+            json.put("date", event.getDate());
+            json.put("startTime", event.getStartTime());
+            json.put("endTime", event.getEndTime());
+
+            // Add all participants
+            JSONArray participants = new JSONArray();
+            for(Participant p : event.getParticipants()){
+                String participant = p.getId();
+                participants.put(participant);
+            }
+            json.put("participants", participants);
+            // Add all speakers
+            JSONArray speakers = new JSONArray();
+            for(Speaker s : event.getSpeakers()){
+                String speaker = s.getId();
+                speakers.put(speaker);
+            }
+            json.put("speakers", speakers);
+
+            String eventContent = new String(Files.readAllBytes(Paths.get(Data.jsonPath + "Events.json")));
+            jsonArray = new JSONArray(eventContent);
+            for(int i = 0; i < jsonArray.length(); i++){
+                JSONObject currentEvent = jsonArray.getJSONObject(i);
+                if(currentEvent.getString("id").equals(event.getId())){
+                    // Update current event
+                    jsonArray.put(i, json);
+                    break;
+                }
+            }
+
             FileWriter fileWriter = new FileWriter(Data.jsonPath + "Events.json");
             fileWriter.write(jsonArray.toString(4));
             fileWriter.close();

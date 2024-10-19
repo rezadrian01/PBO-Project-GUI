@@ -49,7 +49,7 @@
       </Label>
       <TextField fx:id="eventEndTimeField" editable="false" layoutX="634.0" layoutY="448.0" prefHeight="26.0" prefWidth="76.0" />
       <Hyperlink fx:id="backButton" layoutX="48.0" layoutY="176.0" onAction="#back" text="&lt; Back" />
-      <Button layoutX="303.0" layoutY="691.0" mnemonicParsing="false" onAction="#joinEventSubmit" prefHeight="30.0" prefWidth="412.0" style="-fx-background-color: #0ea5e9; -fx-text-fill: white;" text="Join" />
+      <Button fx:id="joinButton" layoutX="303.0" layoutY="691.0" mnemonicParsing="false" onAction="#joinEventSubmit" prefHeight="30.0" prefWidth="412.0" style="-fx-background-color: #0ea5e9; -fx-text-fill: white;" text="Join" />
       <Label fx:id="errorMessage" alignment="CENTER" layoutX="10.0" layoutY="643.0" prefHeight="17.0" prefWidth="1026.0" style="-fx-text-fill: red;" text="You has been registered in this event">
          <font>
             <Font size="15.0" />
