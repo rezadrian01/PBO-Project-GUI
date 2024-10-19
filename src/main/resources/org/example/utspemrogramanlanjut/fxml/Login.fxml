@@ -9,7 +9,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #e8e8e8;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.utspemrogramanlanjut.controllers.LoginController">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #e8e8e8;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.utspemrogramanlanjut.controllers.LoginController">
    <children>
       <Label alignment="CENTER" layoutX="7.0" layoutY="206.0" prefHeight="21.0" prefWidth="1008.0" text="Login into existing account">
          <font>
@@ -26,8 +27,8 @@
          </font>
       </Label>
       <Button layoutX="357.0" layoutY="505.0" mnemonicParsing="false" onAction="#loginSubmit" prefHeight="30.0" prefWidth="318.0" style="-fx-background-color: #0ea5e9; -fx-text-fill: white;" text="Login" />
-      <Separator layoutX="13.0" layoutY="256.0" prefHeight="0.0" prefWidth="1000.0" />
-      <Separator layoutX="10.0" layoutY="141.0" prefHeight="0.0" prefWidth="1000.0" />
+      <Separator layoutX="-3.0" layoutY="256.0" prefHeight="3.0" prefWidth="1024.0" />
+      <Separator layoutX="2.0" layoutY="141.0" prefHeight="3.0" prefWidth="1016.0" />
       <Label fx:id="errorMessage" alignment="CENTER" layoutX="8.0" layoutY="462.0" prefHeight="21.0" prefWidth="1008.0" style="-fx-text-fill: red;">
          <font>
             <Font size="15.0" />

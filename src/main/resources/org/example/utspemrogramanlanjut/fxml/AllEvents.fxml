@@ -7,15 +7,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #e8e8e8;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.utspemrogramanlanjut.controllers.AllEventsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #e8e8e8;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.utspemrogramanlanjut.controllers.AllEventsController">
    <children>
       <Label alignment="CENTER" layoutX="10.0" layoutY="166.0" prefHeight="45.0" prefWidth="1016.0" text="All events">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Separator layoutX="21.0" layoutY="230.0" prefHeight="0.0" prefWidth="1000.0" />
-      <Separator layoutX="26.0" layoutY="139.0" prefHeight="0.0" prefWidth="1000.0" />
+      <Separator layoutX="-5.0" layoutY="230.0" prefHeight="3.0" prefWidth="1032.0" />
+      <Separator layoutY="139.0" prefHeight="3.0" prefWidth="1026.0" />
       <VBox fx:id="container" layoutX="143.0" layoutY="310.0" prefHeight="200.0" prefWidth="756.0" />
       <Label fx:id="fallbackText" alignment="CENTER" layoutY="281.0" prefHeight="21.0" prefWidth="1026.0" text="Event is empty">
          <font>

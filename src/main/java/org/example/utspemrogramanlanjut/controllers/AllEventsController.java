@@ -36,7 +36,6 @@ public class AllEventsController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ArrayList<Event> events = Event.getEventList();
 
-        System.out.println(events.isEmpty());
         if (events.isEmpty()) {
             return;
         }

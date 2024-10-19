@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.utspemrogramanlanjut.controllers.SpeakerMainMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #e8e8e8;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.utspemrogramanlanjut.controllers.SpeakerMainMenuController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="177.0" prefHeight="36.0" prefWidth="1000.0" text="Menu Lists">
          <font>
@@ -29,8 +29,8 @@
             <Font size="11.0" />
          </font>
       </Button>
-      <Separator layoutX="20.0" layoutY="229.0" prefHeight="0.0" prefWidth="1000.0" />
-      <Separator layoutX="15.0" layoutY="158.0" prefHeight="0.0" prefWidth="1000.0" />
+      <Separator layoutY="229.0" prefHeight="3.0" prefWidth="1020.0" />
+      <Separator layoutX="-5.0" layoutY="158.0" prefHeight="3.0" prefWidth="1020.0" />
       <Button layoutX="563.0" layoutY="357.0" mnemonicParsing="false" onAction="#createNewEvent" prefHeight="42.0" prefWidth="134.0" text="Create New Event">
          <font>
             <Font size="11.0" />
