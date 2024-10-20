@@ -1,6 +1,5 @@
 package org.example.utspemrogramanlanjut.models;
 
-import org.example.utspemrogramanlanjut.interfaces.Printable;
 import org.example.utspemrogramanlanjut.interfaces.Role;
 import org.example.utspemrogramanlanjut.services.Auth;
 import org.example.utspemrogramanlanjut.utils.Data;
@@ -10,7 +9,7 @@ import org.json.JSONObject;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class Speaker extends Person implements Role, Printable {
+public class Speaker extends Person implements Role {
     private String expertise;
 
     public Speaker(String name, String email, String password, String expertise){
@@ -62,10 +61,6 @@ public class Speaker extends Person implements Role, Printable {
     @Override
     public String getRole(){
         return this.role;
-    }
-    @Override
-    public void printTicket(Event event){
-        System.out.println("Ticket for speaker " + this.getName() + " on event " + event.getName());
     }
 
     // Static methods
